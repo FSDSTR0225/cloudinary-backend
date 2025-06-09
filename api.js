@@ -13,8 +13,9 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.post('/profile/edit', upload.single('avatar'), (req, res) => {
+app.post('/profile/edit', upload.any(), (req, res) => {
     console.log("form received", req.body)
+    console.log("files received", req.files)
     res.send({"msg":"received"})
 })
 
