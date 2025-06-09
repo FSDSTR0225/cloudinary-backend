@@ -6,7 +6,6 @@ const port = 3003
 
 app.use(express.json());
 app.use(cors())
-const multer  = require('multer')
 
 const upload = multer({ dest: 'uploads/' })
 
