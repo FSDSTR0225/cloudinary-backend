@@ -1,15 +1,19 @@
 const express = require('express')
 const cors = require('cors')
+const multer  = require('multer')
 const app = express()
 const port = 3003
 
 app.use(cors())
+const multer  = require('multer')
+
+const upload = multer({ dest: 'uploads/' })
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.post('/profile/edit', (req, res) => {
+app.post('/profile/edit', upload.single('avatar'), (req, res) => {
     console.log("form received")
     res.send({"msg":"received"})
 })
