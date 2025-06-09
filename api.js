@@ -4,6 +4,7 @@ const multer  = require('multer')
 const app = express()
 const port = 3003
 
+app.use(express.json());
 app.use(cors())
 const multer  = require('multer')
 
@@ -14,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/profile/edit', upload.single('avatar'), (req, res) => {
-    console.log("form received")
+    console.log("form received", req.body)
     res.send({"msg":"received"})
 })
 
