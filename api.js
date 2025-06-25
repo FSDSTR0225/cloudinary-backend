@@ -1,13 +1,14 @@
 const express = require('express')
 const cors = require('cors')
+require('dotenv').config()
 const app = express()
-const port = 3003
+const port = process.env.PORT
 
 app.use(express.json());
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send(`Hello World! ${process.env.SOME_RANDOM_KEY}`)
 })
 
 app.post('/profile/edit', (req, res) => {
