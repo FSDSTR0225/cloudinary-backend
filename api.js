@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 
 app.post('/profile/edit', (req, res) => {
     console.log("form received", req.body)
-    res.send({"msg":"received"})
+    res.send({ "msg": "received" })
 })
 
 app.listen(port, () => {
